@@ -1,0 +1,17 @@
+0 verbose cli /root/.nvm/versions/node/v24.11.0/bin/node /root/.nvm/versions/node/v24.11.0/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@11.6.1
+2 info using node@v24.11.0
+3 silly config load:file:/root/.nvm/versions/node/v24.11.0/lib/node_modules/npm/npmrc
+4 silly config load:file:/root/.npmrc
+5 silly config load:file:/root/.nvm/versions/node/v24.11.0/etc/npmrc
+6 verbose title npm exec jest --coverage --no-watchman
+7 verbose argv "exec" "--" "jest" "--coverage" "--no-watchman"
+8 verbose logfile logs-max:10 dir:/root/.npm/_logs/2025-10-30T12_18_02_097Z-
+9 verbose logfile /root/.npm/_logs/2025-10-30T12_18_02_097Z-debug-0.log
+10 silly logfile done cleaning log files
+11 verbose cwd /root
+12 verbose os Linux 5.14.0-587.el9.aarch64
+13 verbose node v24.11.0
+14 verbose npm  v11.6.1
+15 verbose exit 1
+16 verbose code 1

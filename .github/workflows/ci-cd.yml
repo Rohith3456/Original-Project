@@ -1,13 +1,42 @@
-name: CI/CD
+name: CI/CD - test, build and push
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+env:
+   IMAGE_NAME: rohith2423
+   IMAGE_TAG: ${{ GITHUB.SHA }}
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses:actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@4
+        with:
+          node-version:20
+
+      - name: Install dependencies
+        run:npm ci
+
+      - name:Run tests
+        run:npm test
+
+      - name:upload test results (optional)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path:coverage
+ 
   build-and-push:
+    needs: test
+    if: success()
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/my-app
